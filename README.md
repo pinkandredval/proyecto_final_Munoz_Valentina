@@ -14,7 +14,7 @@
 Este proyecto realiza un análisis 360° sobre dos fenómenos colombianos usando PySpark y Docker.
 
 **Bloques 1 y 2 — Accidentalidad vial en Bogotá D.C.:**
-El dataset de accidentalidad vial histórica de Bogotá contiene 199,146 registros de siniestros ocurridos entre 2015 y 2021, con información de gravedad, clase de accidente, localidad, coordenadas geográficas y franja horaria. El objetivo es entender los patrones temporales y geográficos de la accidentalidad, identificar grupos de riesgo mediante clustering, y predecir la gravedad del accidente (SOLO DANOS / CON HERIDOS / CON MUERTOS) a partir de variables contextuales.
+El dataset de accidentalidad vial histórica de Bogotá contiene 199,146 registros de siniestros ocurridos entre 2015 y 2021, con información de gravedad, clase de accidente, localidad, coordenadas geográficas y franja horaria. El objetivo es entender los patrones temporales y geográficos de la accidentalidad, identificar grupos de riesgo mediante clustering, y predecir la gravedad del accidente (SOLO DAÑOS / CON HERIDOS / CON MUERTOS) a partir de variables contextuales.
 
 **Bloque 3 — Reseñas de hoteles en español:**
 El dataset contiene 19,993 reseñas de hoteles en español (tras limpieza: 11,536 reseñas únicas), etiquetadas con sentimiento positivo, negativo o regular. El objetivo es construir un modelo de análisis de sentimiento usando TF-IDF y compararlo con el modelo pre-entrenado de Hugging Face `pysentimiento/robertuito-sentiment-analysis`.
