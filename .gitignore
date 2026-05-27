@@ -1,0 +1,16 @@
+# Ignorar todos los archivos CSV por defecto...
+*.csv
+*.xlsx
+
+# ¡PERO NO IGNORES ESTE CSV ESPECÍFICO!
+!bloque1_eda/datos_limpios.csv
+
+# Ignorar la caché pesada de los modelos de HuggingFace/NLP (¡Crucial!)
+.huggingface_cache/
+
+# Ignorar carpetas temporales y basura de Jupyter/Spark
+datos_limpios_temp/
+.ipynb_checkpoints/
+.virtual_documents/
+.DS_Store
+Thumbs.db

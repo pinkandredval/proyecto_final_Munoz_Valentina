@@ -1,0 +1,29 @@
+# docker-compose.yml
+# Ambiente optimizado para Parcial Final: Jupyter + PySpark + NLP (Hugging Face)
+
+version: "3.8"
+
+services:
+  jupyter-spark:
+    image: jupyter/pyspark-notebook:latest
+    container_name: pyspark_contenedor_final
+    ports:
+      - "8888:8888"    # Interfaz de Jupyter Lab
+      - "4040:4040"    # Interfaz web de Spark UI (para monitorear tus Jobs)
+    volumes:
+      # Mapea la raíz completa del proyecto. Todo lo que crees o exportes desde Jupyter 
+      # se guardará inmediatamente en tu localhost en las carpetas correspondientes.
+      - .:/home/jovyan/work
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=
+      # Aumentamos la memoria de Spark a 4GB para evitar errores de OutOfMemory con datasets > 50k filas
+      - SPARK_OPTS=--driver-memory 4g --executor-memory 4g
+      # Definimos la caché de Hugging Face dentro del proyecto para que los modelos descargados no se borren
+      - HF_HOME=/home/jovyan/work/.huggingface_cache
+    user: root
+    # El comando arranca sin token e instala automáticamente las librerías necesarias para el Bloque 3
+    command: >
+      bash -c "pip install --no-cache-dir transformers datasets pysentimiento torch && 
+      start-notebook.sh --NotebookApp.token=''"
+    restart: always
